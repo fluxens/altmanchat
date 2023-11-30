@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Change Title and Favicon</title>
+    <title>Be famous. With tabs.</title>
     <link rel="icon" id="favicon" href="default-favicon.ico" type="image/x-icon">
     <script>
         function changeTitle() {
@@ -10,15 +10,16 @@
             document.title = newTitle;
         }
 
-        function changeFavicon() {
+        function changeFaviconAndText(favText) {
             var favicon = document.querySelector('input[name="favicon"]:checked').value;
             document.getElementById('favicon').setAttribute('href', favicon);
+            document.getElementById('titleInput').value = favText;
         }
     </script>
 </head>
 
 <body>
-    <h1>Change Page Title and Favicon</h1>
+    <h1>Be famous. With tabs.</h1>
 
     <div>
         <input type="text" id="titleInput" placeholder="Enter new title here">
@@ -27,14 +28,22 @@
 
     <div>
         <p>Choose a favicon:</p>
-        <input type="radio" id="favicon1" name="favicon" value="whatsapp.ico" onclick="changeFavicon()">
+        <input type="radio" id="favicon1" name="favicon" value="whatsapp.ico"
+            onclick="changeFaviconAndText('Favicon 1 Selected')">
         <label for="favicon1">Whatsapp</label><br>
-        <input type="radio" id="favicon2" name="favicon" value="gchat.ico" onclick="changeFavicon()">
+
+        <input type="radio" id="favicon2" name="favicon" value="gchat.ico"
+            onclick="changeFaviconAndText('Sam Altman - Chat')">
         <label for="favicon2">Google Chat</label><br>
-        <input type="radio" id="favicon3" name="favicon" value="insta.ico" onclick="changeFavicon()">
-        <label for="favicon3">Instagramm</label><br>
-        <input type="radio" id="favicon4" name="favicon" value="gmail.ico" onclick="changeFavicon()">
-        <label for="favicon3">gmail</label><br>
+
+        <input type="radio" id="favicon3" name="favicon" value="insta.ico" onclick="changeFaviconAndText('')">
+        <label for="favicon3">Instagram</label><br>
+        <input type="radio" id="favicon4" name="favicon" value="gmail.ico"
+            onclick="changeFaviconAndText('RE: Position @ open.ai')">
+        <label for="favicon4">gmail</label><br>
+        <input type="radio" id="favicon5" name="favicon" value="x.png"
+            onclick="changeFaviconAndText('(3) Elon Musk / X')">
+        <label for="favicon5">X</label><br>
     </div>
 
 </body>
